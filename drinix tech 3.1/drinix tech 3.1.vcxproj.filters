@@ -1,36 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{c959264f-6923-4fad-8000-35b4dc028499}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core">
+      <UniqueIdentifier>{cac1b127-2659-44c9-8f91-c94a3f5ade22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Support">
+      <UniqueIdentifier>{0ed28fac-8a52-4211-8b2d-de65d15a9eb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{edca1313-9e0d-4a05-94f4-e2705cd2d7e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Components">
+      <UniqueIdentifier>{3062d028-9068-460c-9204-24a8052de2de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Worlds">
+      <UniqueIdentifier>{c5b25212-a173-4844-bf64-b649d6bb7fda}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Entity.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
+      <Filter>Engine\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Engine\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Print.h">
+      <Filter>Game\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Win.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWorld.h">
+      <Filter>Game\Worlds</Filter>
+    </ClInclude>
+    <ClInclude Include="Shtyp.h">
+      <Filter>Game\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuWorld.h">
+      <Filter>Game\Worlds</Filter>
+    </ClInclude>
+    <ClInclude Include="Public.h">
+      <Filter>Game\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Component.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\Support</Filter>
     </ClCompile>
     <ClCompile Include="drinix tech 3.1.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\Support</Filter>
+    </ClCompile>
+    <ClCompile Include="Print.cpp">
+      <Filter>Game\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Win.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWorld.cpp">
+      <Filter>Game\Worlds</Filter>
+    </ClCompile>
+    <ClCompile Include="Shtyp.cpp">
+      <Filter>Game\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuWorld.cpp">
+      <Filter>Game\Worlds</Filter>
+    </ClCompile>
+    <ClCompile Include="Public.cpp">
+      <Filter>Game\Components</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

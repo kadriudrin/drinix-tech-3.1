@@ -1,16 +1,16 @@
 #pragma once
 
-class Entity;
+class Actor;
 
 class Component
 {
 public:
-	std::shared_ptr	<Entity> entity;
+	Actor* actor;
 	std::string type;
 
-	Component(std::string newType);
+	Component(const std::string& newType);
 
-	void SetEntity(std::shared_ptr <Entity> newEntity);
+	Component(const Component& other);
 
 	virtual void Init();
 	virtual void Tick();

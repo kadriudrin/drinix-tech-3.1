@@ -1,26 +1,30 @@
 #pragma once
 
-#include "Entity.h"
+class Solid;
 
 class World
 {
 private:
-	unsigned idCounter = 0;
+	unsigned short idCounter = 0;
 public:
+	std::string name;
 	bool isDead = false;
 	bool running = true;
-	std::vector < std::shared_ptr <Entity> > entities;
 
-	World();
+	std::vector <Actor*> actors;
+	std::vector <Solid*> solids;
 
-	virtual void Load();
+	World(const std::string& newName);
+
+	virtual void Load() = 0;
 	void Init();
 	void Tick();
 	void Destroy();
 
 	void PrintAll();
 
-	void AddEntity(Entity& newEntity);
+	void AddActor(Actor* newActor);
+	void AddSolid(Solid& newSolid);
 	
 	virtual ~World();
 };

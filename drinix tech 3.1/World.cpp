@@ -1,12 +1,9 @@
 #include "stdafx.h"
+#include "Actor.h"
+#include "Solid.h"
 #include "World.h"
-#include "Print.h"
 
-World::World()
-{
-}
-
-void World::Load()
+World::World(const std::string& newName) : name(newName)
 {
 }
 
@@ -14,16 +11,22 @@ void World::Init()
 {
 	Load();
 
-	for (auto& e : entities)
-		e->Init();
+	for (auto& a : actors)
+		a->Init();
 }
 
 void World::Tick()
 {
-	for (auto e = entities.begin(); e != entities.end();) {
+	for (auto e = actors.begin(); e != actors.end(); ) {
+
 		(*e)->Tick();
-		if ((*e)->isDead) 
-			e = entities.erase(e);
+
+		if ((*e)->isDead)
+		{
+			(*e)->Clear();
+			delete (*e);
+			e = actors.erase(e);
+		}
 		else
 			++e;
 	}
@@ -31,26 +34,36 @@ void World::Tick()
 
 void World::Destroy()
 {
-	entities.clear();
+	for (Actor* a : actors)
+		delete a;
+
+	actors.clear();
 }
 
 void World::PrintAll()
 {
-	unsigned size = entities.size();
-	printf("World is Printing (%d) Entities!\n", size);
+	unsigned short size = actors.size();
+
+	std::cout << "World is Printing " << size << " Entities!" << std::endl;
+
+	//for (unsigned short i = 0; i < actors.size(); i++)
+	//	std::cout << "(" << i << ")->"
 }
 
-void World::AddEntity(Entity& newEntity)
+void World::AddActor(Actor* newActor)
 {
-	std::shared_ptr <Entity> newEnt = std::make_shared <Entity>(newEntity);
+	newActor->SetID(idCounter++);
+	newActor->world = this;
 
-	newEnt->SetID(idCounter++);
-	newEnt->world = std::shared_ptr <World>(this);
-	for (auto& c : newEnt->components)
-		c->SetEntity(newEnt);
-	entities.push_back(newEnt);
+	actors.push_back(newActor);
+}
+
+void World::AddSolid(Solid& newSolid)
+{
+	solids.push_back(&newSolid);
 }
 
 World::~World()
 {
+	Destroy();
 }

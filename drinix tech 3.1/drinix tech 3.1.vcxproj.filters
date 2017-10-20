@@ -23,6 +23,12 @@
     <Filter Include="Game\Worlds">
       <UniqueIdentifier>{c5b25212-a173-4844-bf64-b649d6bb7fda}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Components">
+      <UniqueIdentifier>{c39db94d-6df5-436f-9b24-12087477a33c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Actors">
+      <UniqueIdentifier>{fde41c28-5c10-4dd7-81ad-918db3ccf2d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -43,24 +49,34 @@
     <ClInclude Include="stdafx.h">
       <Filter>Engine\Support</Filter>
     </ClInclude>
-    <ClInclude Include="Print.h">
-      <Filter>Game\Components</Filter>
-    </ClInclude>
     <ClInclude Include="Win.h">
       <Filter>Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="GameWorld.h">
       <Filter>Game\Worlds</Filter>
     </ClInclude>
-    <ClInclude Include="Shtyp.h">
-      <Filter>Game\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuWorld.h">
-      <Filter>Game\Worlds</Filter>
-    </ClInclude>
     <ClInclude Include="Public.h">
+      <Filter>Engine\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
       <Filter>Game\Components</Filter>
     </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Solid.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="RefActors.h">
+      <Filter>Engine\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp">
@@ -78,23 +94,30 @@
     <ClCompile Include="drinix tech 3.1.cpp">
       <Filter>Engine\Support</Filter>
     </ClCompile>
-    <ClCompile Include="Print.cpp">
-      <Filter>Game\Components</Filter>
-    </ClCompile>
     <ClCompile Include="Win.cpp">
       <Filter>Engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="GameWorld.cpp">
       <Filter>Game\Worlds</Filter>
     </ClCompile>
-    <ClCompile Include="Shtyp.cpp">
-      <Filter>Game\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuWorld.cpp">
-      <Filter>Game\Worlds</Filter>
-    </ClCompile>
     <ClCompile Include="Public.cpp">
+      <Filter>Engine\Support</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
       <Filter>Game\Components</Filter>
     </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Solid.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp" />
   </ItemGroup>
 </Project>

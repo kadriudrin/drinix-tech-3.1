@@ -1,17 +1,21 @@
 #include "stdafx.h"
 #include "GameWorld.h"
-#include "Print.h"
 
-GameWorld::GameWorld()
+#include "Player.h"
+
+GameWorld::GameWorld() : World("GameWorld")
 {
 }
 
 void GameWorld::Load()
 {
-	Entity entity = Entity();
-	entity.AddComponent <Print>();
+	//for (unsigned short i = 0; i < 100; i++)
+		Bullet* bullet = Actor::Make<Bullet>();
 
-	AddEntity(entity);
+	//Actor* actor = new Actor();
+	//actor->AddComponent<Player>();
+
+	//AddActor(actor);
 }
 
 GameWorld::~GameWorld()

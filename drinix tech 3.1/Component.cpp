@@ -1,14 +1,14 @@
 #include "stdafx.h"
-#include "Entity.h"
+#include "Actor.h"
 #include "Component.h"
 
-Component::Component(std::string newType) : type(newType)
+Component::Component(const std::string& newType) : type(newType)
 {
 }
 
-void Component::SetEntity(std::shared_ptr<Entity> newEntity)
+Component::Component(const Component & other)
 {
-	entity = newEntity;
+	std::cout << "Copied new Component of Type: " << type << std::endl;
 }
 
 void Component::Init()

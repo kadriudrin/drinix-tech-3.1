@@ -19,7 +19,7 @@ void Entity::Tick()
 		c->Tick();
 }
 
-void Entity::SetID(unsigned newID)
+void Entity::SetID(const unsigned short newID)
 {
 	id = newID;
 }
@@ -27,10 +27,16 @@ void Entity::SetID(unsigned newID)
 void Entity::Kill()
 {
 	isDead = true;
-	//world->Kill(id);
+}
+
+void Entity::Clear()
+{
+	for (Component* component : components)
+		delete component;
+
+	components.clear();
 }
 
 Entity::~Entity()
 {
-	components.clear();
 }
